@@ -1,6 +1,5 @@
 # dependencies
 /node_modules
-/themes/**
 
 # Generated files by hugo
 /public/
