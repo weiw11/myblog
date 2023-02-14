@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>nextcloud on Wei&#39;s Blog</title>
+    <link>https://blog.weiwang.dev/tags/nextcloud/</link>
+    <description>Recent content in nextcloud on Wei&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 13 Feb 2023 12:15:03 -0500</lastBuildDate><atom:link href="https://blog.weiwang.dev/tags/nextcloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Duplicati Nextcloud Backup Script</title>
+      <link>https://blog.weiwang.dev/posts/2023/duplicati-nextcloud-backup-script/</link>
+      <pubDate>Mon, 13 Feb 2023 12:15:03 -0500</pubDate>
+      
+      <guid>https://blog.weiwang.dev/posts/2023/duplicati-nextcloud-backup-script/</guid>
+      <description>When Duplicati backups and restores Nextcloud files, we want to enable maintenance mode.
+However by default, Duplicati runs scripts on every operation including when it lists the restore folders, which we don&amp;rsquo;t want.
+The following scripts prevents Duplicati from running the script when it&amp;rsquo;s only listing the restore folders.
+NextcloudOn.sh Script to turn on Nextcloud Maintenance mode
+#!/bin/bash if [ &amp;#34;%DUPLICATI__OPERATIONNAME%&amp;#34; != &amp;#34;List&amp;#34; ] then nextcloud.occ maintenance:mode --on fi exit 0 NextcloudOff.</description>
+    </item>
+    
+  </channel>
+</rss>
