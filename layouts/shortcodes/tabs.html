@@ -1,0 +1,23 @@
+{{/*  Taken from https://github.com/canstand/compost/blob/main/layouts/shortcodes/tabs.html  */}}
+
+{{ if .Inner }}{{ end }}
+{{ $id := .Get 0 }}
+{{ $group := printf "tabs-%s" $id }}
+
+<div class="tabs shadow">
+  {{ range $index, $tab :=  .Scratch.Get $group }}
+    <input
+      type="radio"
+      class="tab-control hidden"
+      name="{{ $group }}"
+      id="{{ printf "%s-%d" $group $index }}"
+      {{ if not $index }}checked="checked"{{ end }}
+    />
+    <label for="{{ printf "%s-%d" $group $index }}" class="tab-label">
+      {{ $tab.Name }}
+    </label>
+    <div class="hidden tab-content">
+      {{ .Content | $.Page.RenderString }}
+    </div>
+  {{ end }}
+</div>

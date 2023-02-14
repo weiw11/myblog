@@ -1,0 +1,56 @@
+/* Taken from https://github.com/canstand/compost/blob/main/assets/css/components.css */
+
+.tabs {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border-width: 1px;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tab-label {
+  display: block;
+  margin-bottom: -1px;
+  padding: 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--theme);
+  color: var(--primary / 2);
+  font-size: .60em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab-label:hover {
+  color: var(--secondary);
+}
+
+.tab-content {
+  border-top: var(--secondary) 1px;
+  border-top-style: solid;
+  display: none;
+  order: 9999;
+  width: 100%;
+  padding: 1rem;
+  /* border-top-width: 1px; */
+  border-color: var(--secondary);
+}
+
+.tab-control:checked + .tab-label {
+  position:relative;
+  border-bottom-color: var(--theme);
+  border-top-color: var(--primary);
+  background: var(--theme);
+  color: var(--primary);
+}
+
+.tab-control:checked + .tab-label + .tab-content {
+  display: block !important;
+}
