@@ -5,7 +5,21 @@
     <link>https://blog.weiwang.dev/</link>
     <description>Recent content on Wei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 13 Feb 2023 12:15:03 -0500</lastBuildDate><atom:link href="https://blog.weiwang.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 21:12:41 -0500</lastBuildDate><atom:link href="https://blog.weiwang.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell Resume Script</title>
+      <link>https://blog.weiwang.dev/posts/2023/powershell-resume-script/</link>
+      <pubDate>Tue, 14 Feb 2023 21:12:41 -0500</pubDate>
+      
+      <guid>https://blog.weiwang.dev/posts/2023/powershell-resume-script/</guid>
+      <description>Scripts to generate company email specific CV/Resume PDF(s).
+This is useful for job application email filtering.
+work.email@my_domain.com will be work.company_name@my_domain.com.
+The mailto link for the email will also be updated accordingly.
+CreatePDF.ps1 Creates a PDF by prompted input text in user Desktop.
+$TextFile = Read-Host -Prompt &amp;#39;File name&amp;#39; $TextFile = $TextFile.ToLower().Replace(&amp;#39; &amp;#39;, &amp;#39;&amp;#39;) $Word = New-Object -ComObject Word.Application $Word.Visible = $false $word.DisplayAlerts = &amp;#34;wdAlertsNone&amp;#34; $Filename = &amp;#34;\path\to\folder\my_resume.docx&amp;#34; $NewFileName = $Filename.Replace(&amp;#34;.docx&amp;#34;,&amp;#34;&amp;#34;) $Document = $Word.</description>
+    </item>
+    
     <item>
       <title>Duplicati Nextcloud Backup Script</title>
       <link>https://blog.weiwang.dev/posts/2023/duplicati-nextcloud-backup-script/</link>

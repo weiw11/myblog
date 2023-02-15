@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.weiwang.dev/tags/email/</loc>
+    <lastmod>2023-02-14T21:12:41-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/posts/</loc>
+    <lastmod>2023-02-14T21:12:41-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/powershell/</loc>
+    <lastmod>2023-02-14T21:12:41-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/posts/2023/powershell-resume-script/</loc>
+    <lastmod>2023-02-14T21:12:41-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/resume/</loc>
+    <lastmod>2023-02-14T21:12:41-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/snippet/</loc>
+    <lastmod>2023-02-14T21:12:41-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/</loc>
+    <lastmod>2023-02-14T21:12:41-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/</loc>
+    <lastmod>2023-02-14T21:12:41-05:00</lastmod>
+  </url><url>
     <loc>https://blog.weiwang.dev/tags/duplicati/</loc>
     <lastmod>2023-02-13T12:15:03-05:00</lastmod>
   </url><url>
@@ -11,16 +35,7 @@
     <loc>https://blog.weiwang.dev/tags/nextcloud/</loc>
     <lastmod>2023-02-13T12:15:03-05:00</lastmod>
   </url><url>
-    <loc>https://blog.weiwang.dev/posts/</loc>
-    <lastmod>2023-02-13T12:15:03-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.weiwang.dev/tags/</loc>
-    <lastmod>2023-02-13T12:15:03-05:00</lastmod>
-  </url><url>
     <loc>https://blog.weiwang.dev/tags/ubuntu/</loc>
-    <lastmod>2023-02-13T12:15:03-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.weiwang.dev/</loc>
     <lastmod>2023-02-13T12:15:03-05:00</lastmod>
   </url><url>
     <loc>https://blog.weiwang.dev/posts/2023/duplicati-setup/</loc>
