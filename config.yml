@@ -82,7 +82,7 @@ params:
     - name: email
       url: "mailto:Wei Wang <website@weiwang.dev>"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/weiw11"
     - name: linkedin
       url: "https://www.linkedin.com/in/weiw11/"
     - name: cv
