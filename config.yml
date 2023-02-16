@@ -80,7 +80,7 @@ params:
 
   socialIcons:
     - name: email
-      url: "mailto:Wei Wang <website@weiwang.dev>"
+      url: "mailto:Wei Wang <blog@weiwang.dev>"
     - name: github
       url: "https://github.com/weiw11"
     - name: linkedin
