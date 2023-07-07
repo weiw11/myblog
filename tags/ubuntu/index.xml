@@ -5,6 +5,7 @@
     <link>https://blog.weiwang.dev/tags/ubuntu/</link>
     <description>Recent content in ubuntu on Wei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Mon, 13 Feb 2023 12:15:03 -0500</lastBuildDate><atom:link href="https://blog.weiwang.dev/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Duplicati Nextcloud Backup Script</title>

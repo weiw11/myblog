@@ -5,7 +5,18 @@
     <link>https://blog.weiwang.dev/</link>
     <description>Recent content on Wei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 14 Feb 2023 21:12:41 -0500</lastBuildDate><atom:link href="https://blog.weiwang.dev/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 07 Jul 2023 13:18:21 -0400</lastBuildDate><atom:link href="https://blog.weiwang.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iPhone Call Menu Automation</title>
+      <link>https://blog.weiwang.dev/posts/2023/iphone-automated-call-menus/</link>
+      <pubDate>Fri, 07 Jul 2023 13:18:21 -0400</pubDate>
+      
+      <guid>https://blog.weiwang.dev/posts/2023/iphone-automated-call-menus/</guid>
+      <description>With rise in Automated Call Menus, it has become tedious to get past complex menu options. Fortunately iPhone has a built in option to automate this process.
+Below, I am using Fidelity as an example, as it requires you to login using an numeric representation of your username and password. As my password is very complex, this guide streamlines the process and saves me 1-5 minutes each time I call Fidelity.</description>
+    </item>
+    
     <item>
       <title>Powershell Resume Script</title>
       <link>https://blog.weiwang.dev/posts/2023/powershell-resume-script/</link>
