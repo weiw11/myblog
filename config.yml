@@ -131,10 +131,14 @@ menu:
       name: tags
       url: /tags/
       weight: 20
+    - identifier: gists
+      name: gists
+      url: https://gist.github.com/weiw11/
+      weight: 30
     - identifier: portfolio
       name: portfolio
       url: https://portfolio.weiwang.dev/
-      weight: 30
+      weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
