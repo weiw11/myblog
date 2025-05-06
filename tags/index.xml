@@ -4,125 +4,121 @@
     <title>Tags on Wei&#39;s Blog</title>
     <link>https://blog.weiwang.dev/tags/</link>
     <description>Recent content in Tags on Wei&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.1</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 07 Jul 2023 13:18:21 -0400</lastBuildDate><atom:link href="https://blog.weiwang.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 May 2025 01:56:10 -0400</lastBuildDate>
+    <atom:link href="https://blog.weiwang.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>automate</title>
+      <title>Csharp</title>
+      <link>https://blog.weiwang.dev/tags/csharp/</link>
+      <pubDate>Tue, 06 May 2025 01:56:10 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/csharp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>https://blog.weiwang.dev/tags/programming/</link>
+      <pubDate>Tue, 06 May 2025 01:56:10 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Serilog</title>
+      <link>https://blog.weiwang.dev/tags/serilog/</link>
+      <pubDate>Tue, 06 May 2025 01:56:10 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/serilog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automate</title>
       <link>https://blog.weiwang.dev/tags/automate/</link>
       <pubDate>Fri, 07 Jul 2023 13:18:21 -0400</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/automate/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>call</title>
+      <title>Call</title>
       <link>https://blog.weiwang.dev/tags/call/</link>
       <pubDate>Fri, 07 Jul 2023 13:18:21 -0400</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/call/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ios</title>
+      <title>Ios</title>
       <link>https://blog.weiwang.dev/tags/ios/</link>
       <pubDate>Fri, 07 Jul 2023 13:18:21 -0400</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/ios/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>iphone</title>
+      <title>Iphone</title>
       <link>https://blog.weiwang.dev/tags/iphone/</link>
       <pubDate>Fri, 07 Jul 2023 13:18:21 -0400</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/iphone/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>menu</title>
+      <title>Menu</title>
       <link>https://blog.weiwang.dev/tags/menu/</link>
       <pubDate>Fri, 07 Jul 2023 13:18:21 -0400</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/menu/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>phone</title>
+      <title>Phone</title>
       <link>https://blog.weiwang.dev/tags/phone/</link>
       <pubDate>Fri, 07 Jul 2023 13:18:21 -0400</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/phone/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>email</title>
+      <title>Email</title>
       <link>https://blog.weiwang.dev/tags/email/</link>
       <pubDate>Tue, 14 Feb 2023 21:12:41 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/email/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>powershell</title>
+      <title>Powershell</title>
       <link>https://blog.weiwang.dev/tags/powershell/</link>
       <pubDate>Tue, 14 Feb 2023 21:12:41 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/powershell/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>resume</title>
+      <title>Resume</title>
       <link>https://blog.weiwang.dev/tags/resume/</link>
       <pubDate>Tue, 14 Feb 2023 21:12:41 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/resume/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>snippet</title>
+      <title>Snippet</title>
       <link>https://blog.weiwang.dev/tags/snippet/</link>
       <pubDate>Tue, 14 Feb 2023 21:12:41 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/snippet/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>duplicati</title>
+      <title>Duplicati</title>
       <link>https://blog.weiwang.dev/tags/duplicati/</link>
       <pubDate>Mon, 13 Feb 2023 12:15:03 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/duplicati/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nextcloud</title>
+      <title>Nextcloud</title>
       <link>https://blog.weiwang.dev/tags/nextcloud/</link>
       <pubDate>Mon, 13 Feb 2023 12:15:03 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/nextcloud/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ubuntu</title>
+      <title>Ubuntu</title>
       <link>https://blog.weiwang.dev/tags/ubuntu/</link>
       <pubDate>Mon, 13 Feb 2023 12:15:03 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/tags/ubuntu/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,25 +1,105 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>powershell on Wei&#39;s Blog</title>
+    <title>Powershell on Wei&#39;s Blog</title>
     <link>https://blog.weiwang.dev/tags/powershell/</link>
-    <description>Recent content in powershell on Wei&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Powershell on Wei&#39;s Blog</description>
+    <generator>Hugo -- 0.147.1</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Feb 2023 21:12:41 -0500</lastBuildDate><atom:link href="https://blog.weiwang.dev/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 21:12:41 -0500</lastBuildDate>
+    <atom:link href="https://blog.weiwang.dev/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Powershell Resume Script</title>
       <link>https://blog.weiwang.dev/posts/2023/powershell-resume-script/</link>
       <pubDate>Tue, 14 Feb 2023 21:12:41 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/posts/2023/powershell-resume-script/</guid>
-      <description>Scripts to generate company email specific CV/Resume PDF(s).
-This is useful for job application email filtering.
-work.email@my_domain.com will be work.company_name@my_domain.com.
-The mailto link for the email will also be updated accordingly.
-CreatePDF.ps1 Creates a PDF by prompted input text in user Desktop.
-$TextFile = Read-Host -Prompt &amp;#39;File name&amp;#39; $TextFile = $TextFile.ToLower().Replace(&amp;#39; &amp;#39;, &amp;#39;&amp;#39;) $Word = New-Object -ComObject Word.Application $Word.Visible = $false $word.DisplayAlerts = &amp;#34;wdAlertsNone&amp;#34; $Filename = &amp;#34;\path\to\folder\my_resume.docx&amp;#34; $NewFileName = $Filename.Replace(&amp;#34;.docx&amp;#34;,&amp;#34;&amp;#34;) $Document = $Word.</description>
+      <description>&lt;p&gt;Scripts to generate company email specific CV/Resume PDF(s).&lt;/p&gt;
+&lt;p&gt;This is useful for job application email filtering.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;work.email@my_domain.com&lt;/code&gt; will be &lt;code&gt;work.company_name@my_domain.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;mailto&lt;/code&gt; link for the email will also be updated accordingly.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class=&#34;tabs shadow&#34;&gt;
+  
+    &lt;input
+      type=&#34;radio&#34;
+      class=&#34;tab-control hidden&#34;
+      name=&#34;tabs-create_pdf&#34;
+      id=&#34;tabs-create_pdf-0&#34;
+      checked=&#34;checked&#34;
+    /&gt;
+    &lt;label for=&#34;tabs-create_pdf-0&#34; class=&#34;tab-label&#34;&gt;
+      CreatePDF.ps1
+    &lt;/label&gt;
+    &lt;div class=&#34;hidden tab-content&#34;&gt;
+      &lt;p&gt;Creates a PDF by prompted input text in user &lt;code&gt;Desktop&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; Read-Host -Prompt &lt;span class=&#34;s1&#34;&gt;&amp;#39;File name&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt;.ToLower&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt;.Replace&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Word&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; New-Object -ComObject Word.Application
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Word&lt;/span&gt;.Visible &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$word&lt;/span&gt;.DisplayAlerts &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;wdAlertsNone&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Filename&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;\path\to\folder\my_resume.docx&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$NewFileName&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$Filename&lt;/span&gt;.Replace&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;.docx&amp;#34;&lt;/span&gt;,&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$Word&lt;/span&gt;.Documents.open&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Filename&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$objSelection&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;.Selection
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Processing file: {0}&amp;#34;&lt;/span&gt; -f &lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;.FullName
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$DesktopPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Environment&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;::GetFolderPath&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Desktop&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$FindText&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;email@&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchCase&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchWholeWorld&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchWildcards&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchSoundsLike&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchAllWordForms&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Forward&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Wrap&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Format&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Replace&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Replace email with company name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$ReplaceText&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$FindText&lt;/span&gt; -Replace &lt;span class=&#34;s2&#34;&gt;&amp;#34;email&amp;#34;&lt;/span&gt;,&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;.Content.Find.Execute&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$FindText&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchCase&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchWholeWorld&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchWildcards&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchSoundsLike&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchAllWordForms&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$Forward&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$Wrap&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$Format&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$ReplaceText&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$Replace&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Replace mailto hyperlink&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;.Hyperlinks &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; ForEach-Object &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_&lt;/span&gt;.Address -like &lt;span class=&#34;s2&#34;&gt;&amp;#34;*email@*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$NewAddress&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$_&lt;/span&gt;.Address -Replace &lt;span class=&#34;s2&#34;&gt;&amp;#34;email&amp;#34;&lt;/span&gt;,&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$_&lt;/span&gt;.Address &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NewAddress&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Copies new email to clipboard&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$NewAddress&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NewAddress&lt;/span&gt; -Replace &lt;span class=&#34;s2&#34;&gt;&amp;#34;mailto:&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; Set-Clipboard
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Export as pdf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Pdf&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$DesktopPath&lt;/span&gt; + &lt;span class=&#34;s2&#34;&gt;&amp;#34;`\&amp;#34; + &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.Name.Replace(&amp;#34;&lt;/span&gt;.docx&lt;span class=&#34;s2&#34;&gt;&amp;#34;, &amp;#34;&amp;#34;) + &amp;#34;&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;-&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt;.pdf&lt;span class=&#34;s2&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.ExportAsFixedFormat(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Pdf&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;,17)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;Exported document as &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;r&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;n&lt;span class=&#34;s2&#34;&gt;&amp;#34; -f &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Pdf&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;# Quit Word without saving
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.Close(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Word&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.Quit()
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;input
+      type=&#34;radio&#34;
+      class=&#34;tab-control hidden&#34;
+      name=&#34;tabs-create_pdf&#34;
+      id=&#34;tabs-create_pdf-1&#34;
+      
+    /&gt;
+    &lt;label for=&#34;tabs-create_pdf-1&#34; class=&#34;tab-label&#34;&gt;
+      CreatePDFs.ps1
+    &lt;/label&gt;
+    &lt;div class=&#34;hidden tab-content&#34;&gt;
+      &lt;p&gt;Create multiple PDFs based on text file in .docx file directory.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

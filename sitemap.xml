@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.weiwang.dev/tags/csharp/</loc>
+    <lastmod>2025-05-06T01:56:10-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/posts/</loc>
+    <lastmod>2025-05-06T01:56:10-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/programming/</loc>
+    <lastmod>2025-05-06T01:56:10-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/serilog/</loc>
+    <lastmod>2025-05-06T01:56:10-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/</loc>
+    <lastmod>2025-05-06T01:56:10-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/posts/2025/using-serilog-with-ilogger-in-csharp/</loc>
+    <lastmod>2025-05-06T01:56:10-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/</loc>
+    <lastmod>2025-05-06T01:56:10-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/posts/2024/customizing-log-output-with-seilog-idestructuring-policy/</loc>
+    <lastmod>2024-08-06T13:02:35-04:00</lastmod>
+  </url><url>
     <loc>https://blog.weiwang.dev/tags/automate/</loc>
     <lastmod>2023-07-07T13:18:21-04:00</lastmod>
   </url><url>
@@ -21,15 +45,6 @@
     <lastmod>2023-07-07T13:18:21-04:00</lastmod>
   </url><url>
     <loc>https://blog.weiwang.dev/tags/phone/</loc>
-    <lastmod>2023-07-07T13:18:21-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.weiwang.dev/posts/</loc>
-    <lastmod>2023-07-07T13:18:21-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.weiwang.dev/tags/</loc>
-    <lastmod>2023-07-07T13:18:21-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.weiwang.dev/</loc>
     <lastmod>2023-07-07T13:18:21-04:00</lastmod>
   </url><url>
     <loc>https://blog.weiwang.dev/tags/email/</loc>

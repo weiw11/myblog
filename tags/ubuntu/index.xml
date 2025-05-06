@@ -1,35 +1,83 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>ubuntu on Wei&#39;s Blog</title>
+    <title>Ubuntu on Wei&#39;s Blog</title>
     <link>https://blog.weiwang.dev/tags/ubuntu/</link>
-    <description>Recent content in ubuntu on Wei&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Ubuntu on Wei&#39;s Blog</description>
+    <generator>Hugo -- 0.147.1</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Feb 2023 12:15:03 -0500</lastBuildDate><atom:link href="https://blog.weiwang.dev/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2023 12:15:03 -0500</lastBuildDate>
+    <atom:link href="https://blog.weiwang.dev/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Duplicati Nextcloud Backup Script</title>
       <link>https://blog.weiwang.dev/posts/2023/duplicati-nextcloud-backup-script/</link>
       <pubDate>Mon, 13 Feb 2023 12:15:03 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/posts/2023/duplicati-nextcloud-backup-script/</guid>
-      <description>When Duplicati backups and restores Nextcloud files, we want to enable maintenance mode.
-However by default, Duplicati runs scripts on every operation including when it lists the restore folders, which we don&amp;rsquo;t want.
-The following scripts prevents Duplicati from running the script when it&amp;rsquo;s only listing the restore folders.
-NextcloudOn.sh Script to turn on Nextcloud Maintenance mode
-#!/bin/bash if [ &amp;#34;%DUPLICATI__OPERATIONNAME%&amp;#34; != &amp;#34;List&amp;#34; ] then nextcloud.occ maintenance:mode --on fi exit 0 NextcloudOff.</description>
+      <description>&lt;p&gt;When Duplicati backups and restores Nextcloud files, we want to enable maintenance mode.&lt;/p&gt;
+&lt;p&gt;However by default, Duplicati runs scripts on every operation including when it lists the restore folders, which we don&amp;rsquo;t want.&lt;/p&gt;
+&lt;p&gt;The following scripts prevents Duplicati from running the script when it&amp;rsquo;s only listing the restore folders.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class=&#34;tabs shadow&#34;&gt;
+  
+    &lt;input
+      type=&#34;radio&#34;
+      class=&#34;tab-control hidden&#34;
+      name=&#34;tabs-nc_scripts&#34;
+      id=&#34;tabs-nc_scripts-0&#34;
+      checked=&#34;checked&#34;
+    /&gt;
+    &lt;label for=&#34;tabs-nc_scripts-0&#34; class=&#34;tab-label&#34;&gt;
+      NextcloudOn.sh
+    &lt;/label&gt;
+    &lt;div class=&#34;hidden tab-content&#34;&gt;
+      &lt;p&gt;Script to turn &lt;strong&gt;on&lt;/strong&gt; Nextcloud Maintenance mode&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%DUPLICATI__OPERATIONNAME%&amp;#34;&lt;/span&gt; !&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;List&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  nextcloud.occ maintenance:mode --on
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;input
+      type=&#34;radio&#34;
+      class=&#34;tab-control hidden&#34;
+      name=&#34;tabs-nc_scripts&#34;
+      id=&#34;tabs-nc_scripts-1&#34;
+      
+    /&gt;
+    &lt;label for=&#34;tabs-nc_scripts-1&#34; class=&#34;tab-label&#34;&gt;
+      NextcloudOff.sh
+    &lt;/label&gt;
+    &lt;div class=&#34;hidden tab-content&#34;&gt;
+      &lt;p&gt;Script to turn &lt;strong&gt;off&lt;/strong&gt; Nextcloud Maintenance mode&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Duplicati Setup on Ubuntu</title>
       <link>https://blog.weiwang.dev/posts/2023/duplicati-setup/</link>
       <pubDate>Mon, 13 Feb 2023 12:07:14 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/posts/2023/duplicati-setup/</guid>
-      <description>Package Repository Setup Adding Mono Repository Add the Mono repository to your system as Duplicati requires mono in order to work.
-sudo apt install gnupg ca-certificates sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF echo &amp;#34;deb https://download.mono-project.com/repo/ubuntu stable-focal main&amp;#34; | sudo tee /etc/apt/sources.list.d/mono-official-stable.list sudo apt update sudo apt install mono-devel gtk-sharp2 Downloading Duplicati Get the url of the latest version of Duplicat from this link.
-Run wget to download the file. Replace the link below with the link you got from above.</description>
+      <description>&lt;h2 id=&#34;package-repository-setup&#34;&gt;Package Repository Setup&lt;/h2&gt;
+&lt;h3 id=&#34;adding-mono-repository&#34;&gt;Adding Mono Repository&lt;/h3&gt;
+&lt;p&gt;Add the Mono repository to your system as Duplicati requires mono in order to work.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install gnupg ca-certificates
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;deb https://download.mono-project.com/repo/ubuntu stable-focal main&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install mono-devel gtk-sharp2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;downloading-duplicati&#34;&gt;Downloading Duplicati&lt;/h2&gt;
+&lt;p&gt;Get the url of the latest version of Duplicat from this &lt;a href=&#34;https://www.duplicati.com/download&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Run wget to download the file. Replace the link below with the link you got from above.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

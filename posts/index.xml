@@ -4,56 +4,260 @@
     <title>Posts on Wei&#39;s Blog</title>
     <link>https://blog.weiwang.dev/posts/</link>
     <description>Recent content in Posts on Wei&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.1</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 07 Jul 2023 13:18:21 -0400</lastBuildDate><atom:link href="https://blog.weiwang.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 May 2025 01:56:10 -0400</lastBuildDate>
+    <atom:link href="https://blog.weiwang.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Serilog with ILogger in CSharp</title>
+      <link>https://blog.weiwang.dev/posts/2025/using-serilog-with-ilogger-in-csharp/</link>
+      <pubDate>Tue, 06 May 2025 01:56:10 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/posts/2025/using-serilog-with-ilogger-in-csharp/</guid>
+      <description>&lt;p&gt;Serilog is a powerful logging library for .NET applications. It supports structured logging and integrates easily with &lt;code&gt;ILogger&lt;/code&gt; from Microsoft.Extensions.Logging.&lt;/p&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Install the necessary NuGet packages:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dotnet add package Serilog.AspNetCore
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dotnet add package Serilog.Sinks.Console
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;basic-setup-in-programcs-net-8&#34;&gt;Basic Setup in Program.cs (.NET 8+)&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Microsoft.Extensions.Hosting&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Serilog&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Logger&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LoggerConfiguration&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;WriteTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CreateLogger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;builder&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;WebApplication&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CreateBuilder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Replace default logging with Serilog&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;builder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Host&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UseSerilog&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// --- Some code here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;using-ilogger-in-a-controller-or-service&#34;&gt;Using &lt;code&gt;ILogger&lt;/code&gt; in a Controller or Service&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Microsoft.Extensions.Logging&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyService&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;readonly&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ILogger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyService&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_logger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MyService&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ILogger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyService&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;logger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_logger&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;logger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;DoWork&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;_logger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LogInformation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Doing work at {Time}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;DateTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UtcNow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;try&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;c1&#34;&gt;// some code&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;catch&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Exception&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;_logger&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LogError&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;An error occurred while doing work&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;benefits&#34;&gt;Benefits&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Structured logging with properties&lt;/li&gt;
+&lt;li&gt;Multiple sinks (e.g., console, file, Seq)&lt;/li&gt;
+&lt;li&gt;Easy integration with ASP.NET Core&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://serilog.net/&#34;&gt;Serilog Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/serilog/serilog-aspnetcore&#34;&gt;GitHub Repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Customizing Log Output with Seilog&#39;s IDestructuring Policy</title>
+      <link>https://blog.weiwang.dev/posts/2024/customizing-log-output-with-seilog-idestructuring-policy/</link>
+      <pubDate>Tue, 06 Aug 2024 13:02:35 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/posts/2024/customizing-log-output-with-seilog-idestructuring-policy/</guid>
+      <description>&lt;p&gt;Serilog is a powerful logging library for .NET that allows deep customization of how objects are represented in structured logs. One such customization point is &lt;code&gt;IDestructuringPolicy&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-idestructuringpolicy&#34;&gt;What is &lt;code&gt;IDestructuringPolicy&lt;/code&gt;?&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;IDestructuringPolicy&lt;/code&gt; is an interface in Serilog that lets you control how specific objects are transformed into structured log data. This is especially useful when you want to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Omit sensitive fields (e.g., passwords, tokens)&lt;/li&gt;
+&lt;li&gt;Rename properties&lt;/li&gt;
+&lt;li&gt;Format output differently&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;use-case-example&#34;&gt;Use Case Example&lt;/h2&gt;
+&lt;p&gt;Say you have a &lt;code&gt;User&lt;/code&gt; class:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>iPhone Call Menu Automation</title>
       <link>https://blog.weiwang.dev/posts/2023/iphone-automated-call-menus/</link>
       <pubDate>Fri, 07 Jul 2023 13:18:21 -0400</pubDate>
-      
       <guid>https://blog.weiwang.dev/posts/2023/iphone-automated-call-menus/</guid>
-      <description>With rise in Automated Call Menus, it has become tedious to get past complex menu options. Fortunately iPhone has a built in option to automate this process.
-Below, I am using Fidelity as an example, as it requires you to login using an numeric representation of your username and password. As my password is very complex, this guide streamlines the process and saves me 1-5 minutes each time I call Fidelity.</description>
+      <description>&lt;p&gt;With rise in Automated Call Menus, it has become tedious to get past complex menu options. Fortunately iPhone has a built in option to automate this process.&lt;/p&gt;
+&lt;p&gt;Below, I am using Fidelity as an example, as it requires you to login using an &lt;strong&gt;numeric&lt;/strong&gt; representation of your username and password. As my password is very complex, this guide streamlines the process and saves me 1-5 minutes each time I call Fidelity.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Powershell Resume Script</title>
       <link>https://blog.weiwang.dev/posts/2023/powershell-resume-script/</link>
       <pubDate>Tue, 14 Feb 2023 21:12:41 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/posts/2023/powershell-resume-script/</guid>
-      <description>Scripts to generate company email specific CV/Resume PDF(s).
-This is useful for job application email filtering.
-work.email@my_domain.com will be work.company_name@my_domain.com.
-The mailto link for the email will also be updated accordingly.
-CreatePDF.ps1 Creates a PDF by prompted input text in user Desktop.
-$TextFile = Read-Host -Prompt &amp;#39;File name&amp;#39; $TextFile = $TextFile.ToLower().Replace(&amp;#39; &amp;#39;, &amp;#39;&amp;#39;) $Word = New-Object -ComObject Word.Application $Word.Visible = $false $word.DisplayAlerts = &amp;#34;wdAlertsNone&amp;#34; $Filename = &amp;#34;\path\to\folder\my_resume.docx&amp;#34; $NewFileName = $Filename.Replace(&amp;#34;.docx&amp;#34;,&amp;#34;&amp;#34;) $Document = $Word.</description>
+      <description>&lt;p&gt;Scripts to generate company email specific CV/Resume PDF(s).&lt;/p&gt;
+&lt;p&gt;This is useful for job application email filtering.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;work.email@my_domain.com&lt;/code&gt; will be &lt;code&gt;work.company_name@my_domain.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;mailto&lt;/code&gt; link for the email will also be updated accordingly.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class=&#34;tabs shadow&#34;&gt;
+  
+    &lt;input
+      type=&#34;radio&#34;
+      class=&#34;tab-control hidden&#34;
+      name=&#34;tabs-create_pdf&#34;
+      id=&#34;tabs-create_pdf-0&#34;
+      checked=&#34;checked&#34;
+    /&gt;
+    &lt;label for=&#34;tabs-create_pdf-0&#34; class=&#34;tab-label&#34;&gt;
+      CreatePDF.ps1
+    &lt;/label&gt;
+    &lt;div class=&#34;hidden tab-content&#34;&gt;
+      &lt;p&gt;Creates a PDF by prompted input text in user &lt;code&gt;Desktop&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; Read-Host -Prompt &lt;span class=&#34;s1&#34;&gt;&amp;#39;File name&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt;.ToLower&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt;.Replace&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Word&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; New-Object -ComObject Word.Application
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Word&lt;/span&gt;.Visible &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$word&lt;/span&gt;.DisplayAlerts &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;wdAlertsNone&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Filename&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;\path\to\folder\my_resume.docx&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$NewFileName&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$Filename&lt;/span&gt;.Replace&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;.docx&amp;#34;&lt;/span&gt;,&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$Word&lt;/span&gt;.Documents.open&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Filename&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$objSelection&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;.Selection
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Processing file: {0}&amp;#34;&lt;/span&gt; -f &lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;.FullName
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$DesktopPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Environment&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;::GetFolderPath&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Desktop&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$FindText&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;email@&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchCase&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchWholeWorld&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchWildcards&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchSoundsLike&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$MatchAllWordForms&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Forward&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Wrap&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Format&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Replace&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Replace email with company name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$ReplaceText&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$FindText&lt;/span&gt; -Replace &lt;span class=&#34;s2&#34;&gt;&amp;#34;email&amp;#34;&lt;/span&gt;,&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;.Content.Find.Execute&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$FindText&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchCase&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchWholeWorld&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchWildcards&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchSoundsLike&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$MatchAllWordForms&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$Forward&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$Wrap&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$Format&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$ReplaceText&lt;/span&gt;, &lt;span class=&#34;nv&#34;&gt;$Replace&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Replace mailto hyperlink&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;.Hyperlinks &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; ForEach-Object &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_&lt;/span&gt;.Address -like &lt;span class=&#34;s2&#34;&gt;&amp;#34;*email@*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$NewAddress&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$_&lt;/span&gt;.Address -Replace &lt;span class=&#34;s2&#34;&gt;&amp;#34;email&amp;#34;&lt;/span&gt;,&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$_&lt;/span&gt;.Address &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NewAddress&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Copies new email to clipboard&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$NewAddress&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NewAddress&lt;/span&gt; -Replace &lt;span class=&#34;s2&#34;&gt;&amp;#34;mailto:&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; Set-Clipboard
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Export as pdf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$Pdf&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$DesktopPath&lt;/span&gt; + &lt;span class=&#34;s2&#34;&gt;&amp;#34;`\&amp;#34; + &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.Name.Replace(&amp;#34;&lt;/span&gt;.docx&lt;span class=&#34;s2&#34;&gt;&amp;#34;, &amp;#34;&amp;#34;) + &amp;#34;&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;-&lt;span class=&#34;nv&#34;&gt;$TextFile&lt;/span&gt;.pdf&lt;span class=&#34;s2&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.ExportAsFixedFormat(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Pdf&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;,17)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;Exported document as &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;r&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;n&lt;span class=&#34;s2&#34;&gt;&amp;#34; -f &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Pdf&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;# Quit Word without saving
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Document&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.Close(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$false&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$Word&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.Quit()
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;input
+      type=&#34;radio&#34;
+      class=&#34;tab-control hidden&#34;
+      name=&#34;tabs-create_pdf&#34;
+      id=&#34;tabs-create_pdf-1&#34;
+      
+    /&gt;
+    &lt;label for=&#34;tabs-create_pdf-1&#34; class=&#34;tab-label&#34;&gt;
+      CreatePDFs.ps1
+    &lt;/label&gt;
+    &lt;div class=&#34;hidden tab-content&#34;&gt;
+      &lt;p&gt;Create multiple PDFs based on text file in .docx file directory.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Duplicati Nextcloud Backup Script</title>
       <link>https://blog.weiwang.dev/posts/2023/duplicati-nextcloud-backup-script/</link>
       <pubDate>Mon, 13 Feb 2023 12:15:03 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/posts/2023/duplicati-nextcloud-backup-script/</guid>
-      <description>When Duplicati backups and restores Nextcloud files, we want to enable maintenance mode.
-However by default, Duplicati runs scripts on every operation including when it lists the restore folders, which we don&amp;rsquo;t want.
-The following scripts prevents Duplicati from running the script when it&amp;rsquo;s only listing the restore folders.
-NextcloudOn.sh Script to turn on Nextcloud Maintenance mode
-#!/bin/bash if [ &amp;#34;%DUPLICATI__OPERATIONNAME%&amp;#34; != &amp;#34;List&amp;#34; ] then nextcloud.occ maintenance:mode --on fi exit 0 NextcloudOff.</description>
+      <description>&lt;p&gt;When Duplicati backups and restores Nextcloud files, we want to enable maintenance mode.&lt;/p&gt;
+&lt;p&gt;However by default, Duplicati runs scripts on every operation including when it lists the restore folders, which we don&amp;rsquo;t want.&lt;/p&gt;
+&lt;p&gt;The following scripts prevents Duplicati from running the script when it&amp;rsquo;s only listing the restore folders.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class=&#34;tabs shadow&#34;&gt;
+  
+    &lt;input
+      type=&#34;radio&#34;
+      class=&#34;tab-control hidden&#34;
+      name=&#34;tabs-nc_scripts&#34;
+      id=&#34;tabs-nc_scripts-0&#34;
+      checked=&#34;checked&#34;
+    /&gt;
+    &lt;label for=&#34;tabs-nc_scripts-0&#34; class=&#34;tab-label&#34;&gt;
+      NextcloudOn.sh
+    &lt;/label&gt;
+    &lt;div class=&#34;hidden tab-content&#34;&gt;
+      &lt;p&gt;Script to turn &lt;strong&gt;on&lt;/strong&gt; Nextcloud Maintenance mode&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%DUPLICATI__OPERATIONNAME%&amp;#34;&lt;/span&gt; !&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;List&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  nextcloud.occ maintenance:mode --on
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;input
+      type=&#34;radio&#34;
+      class=&#34;tab-control hidden&#34;
+      name=&#34;tabs-nc_scripts&#34;
+      id=&#34;tabs-nc_scripts-1&#34;
+      
+    /&gt;
+    &lt;label for=&#34;tabs-nc_scripts-1&#34; class=&#34;tab-label&#34;&gt;
+      NextcloudOff.sh
+    &lt;/label&gt;
+    &lt;div class=&#34;hidden tab-content&#34;&gt;
+      &lt;p&gt;Script to turn &lt;strong&gt;off&lt;/strong&gt; Nextcloud Maintenance mode&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Duplicati Setup on Ubuntu</title>
       <link>https://blog.weiwang.dev/posts/2023/duplicati-setup/</link>
       <pubDate>Mon, 13 Feb 2023 12:07:14 -0500</pubDate>
-      
       <guid>https://blog.weiwang.dev/posts/2023/duplicati-setup/</guid>
-      <description>Package Repository Setup Adding Mono Repository Add the Mono repository to your system as Duplicati requires mono in order to work.
-sudo apt install gnupg ca-certificates sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF echo &amp;#34;deb https://download.mono-project.com/repo/ubuntu stable-focal main&amp;#34; | sudo tee /etc/apt/sources.list.d/mono-official-stable.list sudo apt update sudo apt install mono-devel gtk-sharp2 Downloading Duplicati Get the url of the latest version of Duplicat from this link.
-Run wget to download the file. Replace the link below with the link you got from above.</description>
+      <description>&lt;h2 id=&#34;package-repository-setup&#34;&gt;Package Repository Setup&lt;/h2&gt;
+&lt;h3 id=&#34;adding-mono-repository&#34;&gt;Adding Mono Repository&lt;/h3&gt;
+&lt;p&gt;Add the Mono repository to your system as Duplicati requires mono in order to work.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install gnupg ca-certificates
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;deb https://download.mono-project.com/repo/ubuntu stable-focal main&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install mono-devel gtk-sharp2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;downloading-duplicati&#34;&gt;Downloading Duplicati&lt;/h2&gt;
+&lt;p&gt;Get the url of the latest version of Duplicat from this &lt;a href=&#34;https://www.duplicati.com/download&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Run wget to download the file. Replace the link below with the link you got from above.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
