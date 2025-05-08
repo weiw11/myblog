@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Passwords on Wei&#39;s Blog</title>
+    <link>https://blog.weiwang.dev/tags/passwords/</link>
+    <description>Recent content in Passwords on Wei&#39;s Blog</description>
+    <generator>Hugo -- 0.147.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 07 May 2025 19:55:49 -0400</lastBuildDate>
+    <atom:link href="https://blog.weiwang.dev/tags/passwords/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started with HashiCorp Vault</title>
+      <link>https://blog.weiwang.dev/posts/2025/getting_started_with_hashicorp_vault/</link>
+      <pubDate>Wed, 07 May 2025 19:55:49 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/posts/2025/getting_started_with_hashicorp_vault/</guid>
+      <description>&lt;p&gt;In modern applications, securing sensitive data like API keys, passwords, and certificates is critical. &lt;a href=&#34;https://developer.hashicorp.com/vault&#34;&gt;&lt;strong&gt;HashiCorp Vault&lt;/strong&gt;&lt;/a&gt; is a powerful open-source tool designed to manage secrets and protect sensitive data.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;what-is-hashicorp-vault&#34;&gt;What Is HashiCorp Vault?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Vault&lt;/strong&gt; helps you:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Securely store and access secrets&lt;/li&gt;
+&lt;li&gt;Dynamically generate credentials (e.g., DB credentials)&lt;/li&gt;
+&lt;li&gt;Encrypt/decrypt data without storing it&lt;/li&gt;
+&lt;li&gt;Manage access through fine-grained policies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;key-concepts&#34;&gt;Key Concepts&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Secrets Engine&lt;/strong&gt;: Backend that stores secrets (e.g., KV, AWS, DB).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Authentication Method&lt;/strong&gt;: How clients authenticate (e.g., Token, AppRole).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Policies&lt;/strong&gt;: Define who can do what.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Leases&lt;/strong&gt;: Automatic expiration of secrets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+&lt;h3 id=&#34;1-install-vault&#34;&gt;1. Install Vault&lt;/h3&gt;
+&lt;h4 id=&#34;macos&#34;&gt;macOS&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install vault
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
+&lt;h5 id=&#34;chocolately&#34;&gt;Chocolately&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;choco install vault
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;manual-installation&#34;&gt;Manual Installation&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;Download the Vault binary from &lt;a href=&#34;https://developer.hashicorp.com/vault/downloads&#34;&gt;https://developer.hashicorp.com/vault/downloads&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Unzip and add the Vault executable to your system&amp;rsquo;s PATH.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;11-running-the-vault-dev-mode&#34;&gt;1.1 Running the vault (Dev Mode)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vault server -dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Vault starts in dev mode with a root token printed in the console.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
