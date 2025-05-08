@@ -1,5 +1,6 @@
 ---
 title: "Getting Started with HashiCorp Vault"
+tags: ["vault", "api", "passwords", "certs", "secrets", "security"]
 date: 2025-05-07T19:55:49-04:00
 draft: false
 ---
