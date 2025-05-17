@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.weiwang.dev/posts/2025/playwright-end-to-end-testing-python/</loc>
+    <lastmod>2025-05-17T00:23:37-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/posts/</loc>
+    <lastmod>2025-05-17T00:23:37-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/</loc>
+    <lastmod>2025-05-17T00:23:37-04:00</lastmod>
+  </url><url>
     <loc>https://blog.weiwang.dev/tags/api/</loc>
     <lastmod>2025-05-07T19:55:49-04:00</lastmod>
   </url><url>
@@ -14,9 +23,6 @@
     <loc>https://blog.weiwang.dev/tags/passwords/</loc>
     <lastmod>2025-05-07T19:55:49-04:00</lastmod>
   </url><url>
-    <loc>https://blog.weiwang.dev/posts/</loc>
-    <lastmod>2025-05-07T19:55:49-04:00</lastmod>
-  </url><url>
     <loc>https://blog.weiwang.dev/tags/secrets/</loc>
     <lastmod>2025-05-07T19:55:49-04:00</lastmod>
   </url><url>
@@ -27,9 +33,6 @@
     <lastmod>2025-05-07T19:55:49-04:00</lastmod>
   </url><url>
     <loc>https://blog.weiwang.dev/tags/vault/</loc>
-    <lastmod>2025-05-07T19:55:49-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.weiwang.dev/</loc>
     <lastmod>2025-05-07T19:55:49-04:00</lastmod>
   </url><url>
     <loc>https://blog.weiwang.dev/tags/csharp/</loc>
