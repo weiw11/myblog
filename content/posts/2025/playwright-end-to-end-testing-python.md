@@ -1,5 +1,6 @@
 ---
 title: "Playwright End-to-End Testing with Playwright (Python)"
+tags: ["playwright", "testing", "selenium", "rpa", "ttd"]
 date: 2025-05-17T00:23:37-04:00
 draft: false
 ---
