@@ -2,17 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.weiwang.dev/tags/api/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/auth/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/firebase/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/pocketbase/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/posts/2025/pocketbase-lightweight-backend/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/posts/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/security/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/sql/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/supabase/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/</loc>
+    <lastmod>2025-05-25T16:04:13-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/playwright/</loc>
+    <lastmod>2025-05-17T00:23:37-04:00</lastmod>
+  </url><url>
     <loc>https://blog.weiwang.dev/posts/2025/playwright-end-to-end-testing-python/</loc>
     <lastmod>2025-05-17T00:23:37-04:00</lastmod>
   </url><url>
-    <loc>https://blog.weiwang.dev/posts/</loc>
+    <loc>https://blog.weiwang.dev/tags/rpa/</loc>
     <lastmod>2025-05-17T00:23:37-04:00</lastmod>
   </url><url>
-    <loc>https://blog.weiwang.dev/</loc>
+    <loc>https://blog.weiwang.dev/tags/selenium/</loc>
     <lastmod>2025-05-17T00:23:37-04:00</lastmod>
   </url><url>
-    <loc>https://blog.weiwang.dev/tags/api/</loc>
-    <lastmod>2025-05-07T19:55:49-04:00</lastmod>
+    <loc>https://blog.weiwang.dev/tags/testing/</loc>
+    <lastmod>2025-05-17T00:23:37-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.weiwang.dev/tags/ttd/</loc>
+    <lastmod>2025-05-17T00:23:37-04:00</lastmod>
   </url><url>
     <loc>https://blog.weiwang.dev/tags/certs/</loc>
     <lastmod>2025-05-07T19:55:49-04:00</lastmod>
@@ -24,12 +63,6 @@
     <lastmod>2025-05-07T19:55:49-04:00</lastmod>
   </url><url>
     <loc>https://blog.weiwang.dev/tags/secrets/</loc>
-    <lastmod>2025-05-07T19:55:49-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.weiwang.dev/tags/security/</loc>
-    <lastmod>2025-05-07T19:55:49-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.weiwang.dev/tags/</loc>
     <lastmod>2025-05-07T19:55:49-04:00</lastmod>
   </url><url>
     <loc>https://blog.weiwang.dev/tags/vault/</loc>

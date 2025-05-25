@@ -4,15 +4,92 @@
     <title>Tags on Wei&#39;s Blog</title>
     <link>https://blog.weiwang.dev/tags/</link>
     <description>Recent content in Tags on Wei&#39;s Blog</description>
-    <generator>Hugo -- 0.147.3</generator>
+    <generator>Hugo -- 0.147.5</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 May 2025 19:55:49 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 25 May 2025 16:04:13 -0400</lastBuildDate>
     <atom:link href="https://blog.weiwang.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Api</title>
       <link>https://blog.weiwang.dev/tags/api/</link>
-      <pubDate>Wed, 07 May 2025 19:55:49 -0400</pubDate>
+      <pubDate>Sun, 25 May 2025 16:04:13 -0400</pubDate>
       <guid>https://blog.weiwang.dev/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Auth</title>
+      <link>https://blog.weiwang.dev/tags/auth/</link>
+      <pubDate>Sun, 25 May 2025 16:04:13 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/auth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Firebase</title>
+      <link>https://blog.weiwang.dev/tags/firebase/</link>
+      <pubDate>Sun, 25 May 2025 16:04:13 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/firebase/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pocketbase</title>
+      <link>https://blog.weiwang.dev/tags/pocketbase/</link>
+      <pubDate>Sun, 25 May 2025 16:04:13 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/pocketbase/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>https://blog.weiwang.dev/tags/security/</link>
+      <pubDate>Sun, 25 May 2025 16:04:13 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>https://blog.weiwang.dev/tags/sql/</link>
+      <pubDate>Sun, 25 May 2025 16:04:13 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Supabase</title>
+      <link>https://blog.weiwang.dev/tags/supabase/</link>
+      <pubDate>Sun, 25 May 2025 16:04:13 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/supabase/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Playwright</title>
+      <link>https://blog.weiwang.dev/tags/playwright/</link>
+      <pubDate>Sat, 17 May 2025 00:23:37 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/playwright/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rpa</title>
+      <link>https://blog.weiwang.dev/tags/rpa/</link>
+      <pubDate>Sat, 17 May 2025 00:23:37 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/rpa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Selenium</title>
+      <link>https://blog.weiwang.dev/tags/selenium/</link>
+      <pubDate>Sat, 17 May 2025 00:23:37 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/selenium/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testing</title>
+      <link>https://blog.weiwang.dev/tags/testing/</link>
+      <pubDate>Sat, 17 May 2025 00:23:37 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ttd</title>
+      <link>https://blog.weiwang.dev/tags/ttd/</link>
+      <pubDate>Sat, 17 May 2025 00:23:37 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/tags/ttd/</guid>
       <description></description>
     </item>
     <item>
@@ -34,13 +111,6 @@
       <link>https://blog.weiwang.dev/tags/secrets/</link>
       <pubDate>Wed, 07 May 2025 19:55:49 -0400</pubDate>
       <guid>https://blog.weiwang.dev/tags/secrets/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security</title>
-      <link>https://blog.weiwang.dev/tags/security/</link>
-      <pubDate>Wed, 07 May 2025 19:55:49 -0400</pubDate>
-      <guid>https://blog.weiwang.dev/tags/security/</guid>
       <description></description>
     </item>
     <item>

@@ -4,10 +4,29 @@
     <title>Wei&#39;s Blog</title>
     <link>https://blog.weiwang.dev/</link>
     <description>Recent content on Wei&#39;s Blog</description>
-    <generator>Hugo -- 0.147.3</generator>
+    <generator>Hugo -- 0.147.5</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 17 May 2025 00:23:37 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 25 May 2025 16:04:13 -0400</lastBuildDate>
     <atom:link href="https://blog.weiwang.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PocketBase: Lightweight Backend for Modern Prototyping</title>
+      <link>https://blog.weiwang.dev/posts/2025/pocketbase-lightweight-backend/</link>
+      <pubDate>Sun, 25 May 2025 16:04:13 -0400</pubDate>
+      <guid>https://blog.weiwang.dev/posts/2025/pocketbase-lightweight-backend/</guid>
+      <description>&lt;p&gt;PocketBase is an open-source backend written in Go, designed to be lightweight, fast, and developer-friendly. It&amp;rsquo;s ideal for developers building prototypes, local-first applications, or lightweight production apps without managing a complex backend stack.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;pocketbase overview&#34; loading=&#34;lazy&#34; src=&#34;https://blog.weiwang.dev/images/pocketbase_overview.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;what-is-pocketbase&#34;&gt;What is PocketBase?&lt;/h2&gt;
+&lt;p&gt;PocketBase is a single-binary backend that includes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Embedded SQLite database&lt;/li&gt;
+&lt;li&gt;RESTful and WebSocket APIs&lt;/li&gt;
+&lt;li&gt;File storage system&lt;/li&gt;
+&lt;li&gt;User authentication (email/password, OAuth2)&lt;/li&gt;
+&lt;li&gt;Web-based admin UI&lt;/li&gt;
+&lt;li&gt;Built-in data validation and access control&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It runs entirely from a &lt;strong&gt;single executable&lt;/strong&gt;, requiring no external services or runtime dependencies.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Playwright End-to-End Testing with Playwright (Python)</title>
       <link>https://blog.weiwang.dev/posts/2025/playwright-end-to-end-testing-python/</link>
