@@ -46,7 +46,7 @@ PocketBase supports realtime updates over WebSocket connections, allowing fronte
 
 ### File Storage
 
-Files can be uploaded via API and stored either locally or in custom storage backends (S3, etc.).
+Files can be uploaded via API and stored either locally or in a S3 compatible storage.
 
 ### Extensive
 
