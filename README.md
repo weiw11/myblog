@@ -1,6 +1,6 @@
 # My Blog
 
-My personal blog where I post about random things I find interesting.
+My personal blog where I post about random things (mostly tech related) I find interesting.
 
 ## Blog Technical Info
 
